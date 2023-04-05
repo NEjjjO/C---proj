@@ -1,4 +1,37 @@
 #include "Person.h"
+
+
+//constructors for person
+Person::Person(const string& name) : name(name){
+    p_count++;
+    cout << "default constructor" << endl;
+}
+
+// Constructor implementation
+Person::Person(const string& name, int age) : name(name), age(age) {
+    p_count++; // Increment the count of Person objects
+    cout << "constructor with values" << endl;
+}
+
+Person::Person(const string& name, int age, const string& occupation) : name(name), age(age), occupation(occupation) {
+    p_count++; // Increment the count of Person objects
+    cout << "constructor with all values" << endl;
+}
+
+Person::Person(const string& name, int age, const string& occupation, const string& hobby) : name(name), age(age), occupation(occupation), hobby(hobby) {
+    p_count++; // Increment the count of Person objects
+    cout << "constructor with parameter" << endl;
+}
+
+//ddestructors for person
+Person::~Person() {
+    p_count--; // Decrement the count of Person objects
+    cout << "Destructor " << name << "." << endl;
+}
+
+
+
+
 //setters for Person
 void Person::setScore(int sal) {
     score = sal;

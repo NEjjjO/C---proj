@@ -29,6 +29,11 @@ class Person{
 
 
     //constructors here
+    Person(const string& name);
+    Person(const string& name, int age);
+    Person(const string& name, int age, const string& occupation);
+    Person(const string& name, int age, const string& occupation, const string& hobby);
+
 
     //destructors here
     ~Person();
@@ -41,7 +46,7 @@ class Person{
     int weight;
     int iq;
     int score;
-    string occ;
+    string occupation;
     string hobby;
 };
 
