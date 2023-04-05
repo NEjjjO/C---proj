@@ -45,11 +45,16 @@ class Person{
     string hobby;
 };
 
+class Main {
+public:
+    void setBool(bool mein); 
+    void setRandom(int ran);
+    int getBool();
+    int getRandom();
 
-
-
-
-
-
+private:
+    bool mainbool = true;
+    int random;
+};
 
 #endif //person.h

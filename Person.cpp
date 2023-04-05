@@ -1,5 +1,5 @@
 #include "Person.h"
-
+//setters for Person
 void Person::setScore(int sal) {
     score = sal;
 }
@@ -17,8 +17,12 @@ void Person::setAge(int a) {
     this->age = a;
 }
 
-//getters
 
+
+
+
+
+//getters for Person
 int Person::getScore() {
     return score;
 }
@@ -33,4 +37,20 @@ int Person::getIq() {
 }
 int Person::getAge() {
     return age;
+}
+
+// class Main setters
+void Main::setBool(bool mein) {
+    mainbool = mein;
+}
+void Main::setRandom(int ran) {
+    random = ran;
+}
+
+//Class Main getters
+int Main::getBool() {
+    return mainbool;
+}
+int Main::getRandom() {
+    return random;
 }
