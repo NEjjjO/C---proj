@@ -3,7 +3,7 @@
 Person::Person(const string& name) : m_name(name){
     s_count++;
     cout << "default constructor" << endl;
-}
+} 
 
 // Constructor implementation
 Person::Person(const string& name, int age) : m_name(name), age(age){
@@ -48,7 +48,7 @@ void Person::setName(string nam)
 {
     name2 = nam;
 }
-}
+
 void Person::setAge(int a) {
     this->age = a;
 }

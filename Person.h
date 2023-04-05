@@ -35,10 +35,10 @@ public:
     const string& getName();
     
     //constructor
-    Person(const string& name);
-    Person(const string& name, int age, string car);
-    Person(const string& name, int age, const string& occupation, string car);
-    Person(const string& name, int age, const string& occupation, const string& hobby, string car);
+    Person(const string &name); //def const
+    Person(const string &name, int age);
+    Person(const string &name, int age, const string& occupation);
+    Person(const string &name, int age, const string& occupation, const string& hobby);
 
     // Destructor
     ~Person();
