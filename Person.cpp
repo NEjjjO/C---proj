@@ -1,40 +1,39 @@
 #include "Person.h"
 
-
-//constructors for person
-Person::Person(const string& name) : name(name){
-    p_count++;
+Person::Person(const string& name) : m_name(name){
+    s_count++;
     cout << "default constructor" << endl;
 }
 
 // Constructor implementation
-Person::Person(const string& name, int age) : name(name), age(age) {
-    p_count++; // Increment the count of Person objects
+Person::Person(const string& name, int age) : m_name(name), age(age){
+    s_count++; // Increment the count of Person objects
     cout << "constructor with values" << endl;
 }
 
-Person::Person(const string& name, int age, const string& occupation) : name(name), age(age), occupation(occupation) {
-    p_count++; // Increment the count of Person objects
+Person::Person(const string& name, int age, const string& occupation) : m_name(name), age(age), m_occupation(occupation) {
+    s_count++; // Increment the count of Person objects
     cout << "constructor with all values" << endl;
 }
 
-Person::Person(const string& name, int age, const string& occupation, const string& hobby) : name(name), age(age), occupation(occupation), hobby(hobby) {
-    p_count++; // Increment the count of Person objects
+Person::Person(const string& name, int age, const string& occupation, const string& hobby) : m_name(name), age(age), m_occupation(occupation), m_hobby(hobby) {
+    s_count++; // Increment the count of Person objects
     cout << "constructor with parameter" << endl;
 }
 
-//ddestructors for person
+// Destructor implementation
 Person::~Person() {
-    p_count--; // Decrement the count of Person objects
-    cout << "Destructor " << name << "." << endl;
+    s_count--; // Decrement the count of Person objects
+    cout << "Destructor " << m_name << "." << endl;
 }
 
 
+// counter for persons
+int Person::s_count = 0;
 
-
-//setters for Person
-void Person::setScore(int sal) {
-    score = sal;
+//setters
+void Person::setSalary(int sal) {
+    salary = sal;
 }
 void Person::setHeight(int high) {
     height = high;
@@ -45,19 +44,19 @@ void Person::setWeight(int wegh) {
 void Person::setIq(int num) {
     iq = num;
 }
-
+void Person::setName(string nam)
+{
+    name2 = nam;
+}
+}
 void Person::setAge(int a) {
     this->age = a;
 }
 
 
-
-
-
-
-//getters for Person
-int Person::getScore() {
-    return score;
+//getters for person
+int Person::getSalary() {
+    return salary;
 }
 int Person::getHeight() {
     return height;
@@ -68,9 +67,15 @@ int Person::getWeight() {
 int Person::getIq() {
     return iq;
 }
+const string& Person::getName()
+{
+    return m_name;
+}
+
 int Person::getAge() {
     return age;
 }
+
 
 // class Main setters
 void Main::setBool(bool mein) {
@@ -79,8 +84,6 @@ void Main::setBool(bool mein) {
 void Main::setRandom(int ran) {
     random = ran;
 }
-
-//Class Main getters
 int Main::getBool() {
     return mainbool;
 }

@@ -3,51 +3,58 @@
 #pragma once
 #include <iostream>
 #include <string.h>
+#include "Car.h"
+
 using namespace std;
 
+class Person {
+protected:
+    string phone_num;
+    string address;
 
-class Person{
-    public:
-        string name;
-        int id;
-    //setters here
-    void setScore(int sal);
+
+public: 
+    string name2;
+    string id; 
+
+    //setters
+    void setSalary(int sal);
     void setAge(int a);
     void setHeight(int high);
     void setWeight(int wegh);
     void setIq(int num);
     void setName(string nam);
+    void setName(char nam);
 
-    //getters here
-    int getScore();
+    //getters
+    int getSalary();
     int getAge();
     int getHeight();
     int getWeight();
     int getIq();
     const string& getName();
-
-
-
-    //constructors here
+    
+    //constructor
     Person(const string& name);
-    Person(const string& name, int age);
-    Person(const string& name, int age, const string& occupation);
-    Person(const string& name, int age, const string& occupation, const string& hobby);
+    Person(const string& name, int age, string car);
+    Person(const string& name, int age, const string& occupation, string car);
+    Person(const string& name, int age, const string& occupation, const string& hobby, string car);
 
-
-    //destructors here
+    // Destructor
     ~Person();
 
-    static int p_count;
+    static int s_count;
 
-    private:
+    
+private:
     int age;
     int height;
+    int salary;
     int weight;
     int iq;
-    int score;
-    string occupation;
-    string hobby;
+    string m_name;
+    string m_occupation;
+    string m_hobby;
 };
 
 class Main {
@@ -61,5 +68,4 @@ private:
     bool mainbool = true;
     int random;
 };
-
-#endif //person.h
+#endif
